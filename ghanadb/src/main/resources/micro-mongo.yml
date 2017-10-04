@@ -1,0 +1,72 @@
+server:
+  port: ${port:1212}
+  contextPath: /mongo/rest
+  compression: 
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain,text/css,application/javascript
+
+spring:
+  profiles.active: prod
+---
+spring:
+  profiles: dev
+  http:
+    multipart:
+      max-file-size: 2000KB
+      max-request-size: 2000KB
+  freemarker:
+    checkTemplateLocation: false
+  velocity:
+    resource-loader-path: classpath:/templates/velocity
+  data:
+    mongodb:
+      database: kandapohe
+      username: kandapohe
+      password: m0ng0_k@nd@p0he
+      host: ec2-35-160-105-209.us-west-2.compute.amazonaws.com
+      port: 26101
+  mail:
+    host: mail.kandapohe.com
+    port: 26
+    username: noreply@kandapohe.com
+    password: n@rep!y@kpnew
+
+kandapohe:
+  payment_success: http://ec2-35-160-105-209.us-west-2.compute.amazonaws.com:1212/mongo/rest/api/v1/dbs/kandapohe/payments/_payment_success
+  payment_fail: http://ec2-35-160-105-209.us-west-2.compute.amazonaws.com:1212/mongo/rest/api/v1/dbs/kandapohe/payments/_payment_failure
+  payment_cancel: http://ec2-35-160-105-209.us-west-2.compute.amazonaws.com:1212/mongo/rest/api/v1/dbs/kandapohe/payments/_payment_cancel
+  payment_redirect: http://kandapohe.com/dashboard/user
+  server: http://kandapohe.com
+  watermarkText: © kandapohe.com
+  
+---
+spring:
+  profiles: prod
+  http:
+    multipart:
+      max-file-size: 2000KB
+      max-request-size: 2000KB
+  freemarker:
+    checkTemplateLocation: false
+  velocity:
+    resource-loader-path: classpath:/templates/velocity
+  data:
+    mongodb:
+      username: kandapohe
+      database: kandapohe
+      password: m0ng0_k@nd@p0he
+      host: ec2-35-154-212-219.ap-south-1.compute.amazonaws.com
+      port: 26101
+  mail:
+    host: mail.kandapohe.com
+    port: 26
+    username: noreply@kandapohe.com
+    password: n@rep!y@kpnew
+
+kandapohe:
+  payment_success: http://ec2-35-154-212-219.ap-south-1.compute.amazonaws.com/mongo/rest/api/v1/dbs/kandapohe/payments/_payment_success
+  payment_fail: http://ec2-35-154-212-219.ap-south-1.compute.amazonaws.com/mongo/rest/api/v1/dbs/kandapohe/payments/_payment_failure
+  payment_cancel: http://ec2-35-154-212-219.ap-south-1.compute.amazonaws.com/mongo/rest/api/v1/dbs/kandapohe/payments/_payment_cancel
+  payment_redirect: http://kandapohe.com/dashboard/user
+  server: http://kandapohe.com
+  watermarkText: © kandapohe.com
