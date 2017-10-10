@@ -21,9 +21,9 @@
 	
 	<dependencies>
 		<dependency>
-			<groupId>com.sig</groupId>
+			<groupId>com.sig.school</groupId>
 			<artifactId>common</artifactId>
-			<version>0</version>
+			<version>1</version>
 		</dependency>
 		
 		<!-- Core Spring Boot -->
