@@ -6,7 +6,7 @@ server:
     mime-types: application/json,application/xml,text/html,text/xml,text/plain,text/css,application/javascript
 
 spring:
-  profiles.active: prod
+  profiles.active: dev
 ---
 spring:
   profiles: dev
@@ -20,24 +20,16 @@ spring:
     resource-loader-path: classpath:/templates/velocity
   data:
     mongodb:
-      database: kandapohe
-      username: kandapohe
-      password: m0ng0_k@nd@p0he
-      host: ec2-35-160-105-209.us-west-2.compute.amazonaws.com
-      port: 26101
+      database: mschool
+      username: dinesh
+      password: dinesh
+      host: ds163034.mlab.com
+      port: 63034
   mail:
-    host: mail.kandapohe.com
-    port: 26
-    username: noreply@kandapohe.com
-    password: n@rep!y@kpnew
-
-kandapohe:
-  payment_success: http://ec2-35-160-105-209.us-west-2.compute.amazonaws.com:1212/mongo/rest/api/v1/dbs/kandapohe/payments/_payment_success
-  payment_fail: http://ec2-35-160-105-209.us-west-2.compute.amazonaws.com:1212/mongo/rest/api/v1/dbs/kandapohe/payments/_payment_failure
-  payment_cancel: http://ec2-35-160-105-209.us-west-2.compute.amazonaws.com:1212/mongo/rest/api/v1/dbs/kandapohe/payments/_payment_cancel
-  payment_redirect: http://kandapohe.com/dashboard/user
-  server: http://kandapohe.com
-  watermarkText: © kandapohe.com
+    host: zmail.kandapohe.com
+    port: 026
+    username: znoreply@kandapohe.com
+    password: zn@rep!y@kpnew
   
 ---
 spring:
@@ -52,21 +44,13 @@ spring:
     resource-loader-path: classpath:/templates/velocity
   data:
     mongodb:
-      username: kandapohe
-      database: kandapohe
-      password: m0ng0_k@nd@p0he
-      host: ec2-35-154-212-219.ap-south-1.compute.amazonaws.com
+      username: 
+      database: 
+      password: 
+      host: 
       port: 26101
   mail:
-    host: mail.kandapohe.com
-    port: 26
-    username: noreply@kandapohe.com
-    password: n@rep!y@kpnew
-
-kandapohe:
-  payment_success: http://ec2-35-154-212-219.ap-south-1.compute.amazonaws.com/mongo/rest/api/v1/dbs/kandapohe/payments/_payment_success
-  payment_fail: http://ec2-35-154-212-219.ap-south-1.compute.amazonaws.com/mongo/rest/api/v1/dbs/kandapohe/payments/_payment_failure
-  payment_cancel: http://ec2-35-154-212-219.ap-south-1.compute.amazonaws.com/mongo/rest/api/v1/dbs/kandapohe/payments/_payment_cancel
-  payment_redirect: http://kandapohe.com/dashboard/user
-  server: http://kandapohe.com
-  watermarkText: © kandapohe.com
+    host: zmail.kandapohe.com
+    port: 026
+    username: znoreply@kandapohe.com
+    password: zn@rep!y@kpnew
