@@ -166,12 +166,52 @@
         </repository>
   </repositories>
   
+	<!-- 
 	<distributionManagement>
 		<repository>
 			<id>ssh-aws</id>
 			<url>scpexe://ec2-35-160-105-209.us-west-2.compute.amazonaws.com</url>
 		</repository>
 	</distributionManagement>
+	-->
 	
-	
+	<profiles>
+    <profile>
+        <id>heroku</id>
+        <activation>
+            <property>
+                <name>heroku</name>
+            </property>
+        </activation>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>com.heroku.sdk</groupId>
+                    <artifactId>heroku-maven-plugin</artifactId>
+                    <version>1.1.1</version>
+                    <configuration>
+                        <appName>mschooldb</appName>
+                        <includeTarget>false</includeTarget>
+                        <includes>
+                            <include>ghanadb-0.0.1.jar</include>
+                        </includes>
+                        <jdkVersion>1.8</jdkVersion>
+                        <processTypes>
+                            <web>java $JAVA_OPTS -jar ghanadb-0.0.1.jar --spring.profiles.active=dev</web>
+                        </processTypes>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>deploy</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+</profiles>
+
 </project>
