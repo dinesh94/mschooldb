@@ -1,6 +1,4 @@
 server:
-  port: ${port:80}
-  contextPath: /mongo/rest
   compression: 
     enabled: true
     mime-types: application/json,application/xml,text/html,text/xml,text/plain,text/css,application/javascript
