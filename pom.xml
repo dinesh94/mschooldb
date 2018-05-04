@@ -193,11 +193,11 @@
                         <appName>mschooldb</appName>
                         <includeTarget>false</includeTarget>
                         <includes>
-                            <include>ghanadb-0.0.1.jar</include>
+                            <include>ghanadb/target/ghanadb-0.0.1.jar</include>
                         </includes>
                         <jdkVersion>1.8</jdkVersion>
                         <processTypes>
-                            <web>java $JAVA_OPTS -jar ghanadb-0.0.1.jar --spring.profiles.active=dev</web>
+                            <web>java $JAVA_OPTS -jar ghanadb/target/ghanadb-0.0.1.jar --spring.profiles.active=dev</web>
                         </processTypes>
                     </configuration>
                     <executions>
