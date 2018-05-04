@@ -1,5 +1,5 @@
 server:
-  port: ${port:1212}
+  port: ${port:80}
   contextPath: /mongo/rest
   compression: 
     enabled: true
